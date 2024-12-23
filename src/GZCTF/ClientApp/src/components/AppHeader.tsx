@@ -88,7 +88,7 @@ export const AppHeader: FC<AppControlProps> = ({ openColorModal }) => {
               <Menu.Divider />
               <Menu.Item
                 leftSection={
-                  colorScheme === 'dark' ? (
+                  colorScheme === 'light' ? (
                     <Icon path={mdiWeatherSunny} size={1} />
                   ) : (
                     <Icon path={mdiWeatherNight} size={1} />

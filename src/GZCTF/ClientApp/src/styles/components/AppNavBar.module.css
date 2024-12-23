@@ -39,8 +39,7 @@
   border: none;
   box-shadow: var(--mantine-shadow-lg);
   background-color: light-dark(var(--mantine-color-light-0), var(--mantine-color-gray-8));
-
-  @media (max-width: $mantine-breakpoint-xs) {
+  @media (max-width: 576px) {
     display: none;
   }
 }
@@ -69,4 +68,14 @@
   width: 100%;
   height: auto;
   position: relative;
+}
+/* 在你的 CSS 文件中添加以下样式 */
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }

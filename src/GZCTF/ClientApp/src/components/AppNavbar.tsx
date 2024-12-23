@@ -11,8 +11,6 @@ import {
   mdiNoteTextOutline,
   mdiPalette,
   mdiTranslate,
-  mdiWeatherNight,
-  mdiWeatherSunny,
   mdiWrenchOutline,
 } from '@mdi/js'
 import { Icon } from '@mdi/react'
@@ -64,8 +62,6 @@ const NavbarLink: FC<NavbarLinkProps> = (props: NavbarLinkProps) => {
 
 export const AppNavbar: FC<AppControlProps> = ({ openColorModal }) => {
   const location = useLocation()
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme()
-
   const logout = useLogOut()
   const { user, error } = useUser()
   const { t } = useTranslation()
@@ -133,23 +129,6 @@ export const AppNavbar: FC<AppControlProps> = ({ openColorModal }) => {
               ))}
             </Menu.Dropdown>
           </Menu>
-
-          {/* Color Mode */}
-          <Tooltip
-            label={t('common.tab.theme.switch_to', {
-              theme: colorScheme === 'dark' ? t('common.tab.theme.light') : t('common.tab.theme.dark'),
-            })}
-            classNames={classes}
-            position="right"
-          >
-            <ActionIcon onClick={() => toggleColorScheme()} className={classes.link}>
-              {colorScheme === 'dark' ? (
-                <Icon path={mdiWeatherSunny} size={1} />
-              ) : (
-                <Icon path={mdiWeatherNight} size={1} />
-              )}
-            </ActionIcon>
-          </Tooltip>
 
           {/* User Info */}
           <Menu position="right-end" offset={24}>

@@ -1,19 +1,17 @@
 import { Group, Stack, Title, useMantineTheme } from '@mantine/core'
-import { mdiFlagCheckered } from '@mdi/js'
-import { Icon } from '@mdi/react'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { MobilePostCard } from '@Components/MobilePostCard'
-import { PostCard } from '@Components/PostCard'
-import { RecentGame } from '@Components/RecentGame'
 import { RecentGameCarousel } from '@Components/RecentGameCarousel'
 import { WithNavBar } from '@Components/WithNavbar'
 import { showErrorNotification } from '@Utils/ApiHelper'
 import { useIsMobile } from '@Utils/ThemeOverride'
 import { usePageTitle } from '@Hooks/usePageTitle'
+import final from '../resources/final.png'
+import { mdiFlagCheckered } from '@mdi/js'
+import { Icon } from '@mdi/react'
+import { RecentGame } from '@Components/RecentGame'
 import api, { PostInfoModel } from '@Api'
 import classes from '@Styles/Index.module.css'
-
 const Home: FC = () => {
   const { t } = useTranslation()
 
@@ -73,12 +71,7 @@ const Home: FC = () => {
         {isMobile && recentGames && recentGames.length > 0 && <RecentGameCarousel games={recentGames} />}
         <Stack align="center">
           <Group wrap="nowrap" gap={4} justify="space-between" align="flex-start" w="100%">
-            <Stack className={classes.posts}>
-              {isMobile
-                ? posts?.map((post) => <MobilePostCard key={post.id} post={post} onTogglePinned={onTogglePinned} />)
-                : posts?.map((post) => <PostCard key={post.id} post={post} onTogglePinned={onTogglePinned} />)}
-            </Stack>
-            {!isMobile && (
+            <Stack className={classes.posts}>            {!isMobile && (
               <nav className={classes.wrapper}>
                 <div className={classes.inner}>
                   <Stack>
@@ -91,6 +84,15 @@ const Home: FC = () => {
                 </div>
               </nav>
             )}
+            </Stack>
+            {!isMobile && (
+                      <img 
+                        src={final} 
+                          alt="背景人物" 
+                        style={{ width: '800px', height: 'auto', clipPath: 'inset(0 0 0 6%)'}} // 自定义遮罩
+                        draggable="false"           
+                      />
+            )}  
           </Group>
         </Stack>
       </Stack>

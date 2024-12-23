@@ -74,7 +74,7 @@ export const WithNavBar: FC<WithNavBarProps> = ({
               style={{
                 zIndex: 10,
                 boxShadow: theme.shadows.sm,
-                backgroundColor: colorScheme === 'dark' ? theme.colors.gray[7] : theme.colors.light[2],
+                backgroundColor:theme.colors.light[0],
               }}
             >
               <LoadingOverlay visible={isLoading ?? false} overlayProps={DEFAULT_LOADING_OVERLAY} />

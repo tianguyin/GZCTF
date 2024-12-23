@@ -102,7 +102,7 @@ export const useChallengeCategoryLabelMap = () => {
   const { t } = useTranslation()
   const theme = useMantineTheme()
   const { colorScheme } = useMantineColorScheme()
-  const revert = colorScheme === 'dark' ? 'light' : 'dark'
+  const revert = colorScheme === 'light' ? 'light' : 'dark'
 
   return new Map<ChallengeCategory, ChallengeCategoryItemProps>([
     [

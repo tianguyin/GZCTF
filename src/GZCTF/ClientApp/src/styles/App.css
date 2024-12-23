@@ -6,11 +6,11 @@ body {
   padding: 0;
   margin: 0;
 
-  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-gray-7));
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  background-color: light-dark(var(--mantine-color-white-1111), var(--mantine-color-white-7));
+  color: light-dark(var(--mantine-color-white-7), var(--mantine-color-white-0));
 
   @media print {
-    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-gray-7));
+    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-white-7));
   }
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--mantine-color-dark-3);
+  background: var(--mantine-color-white-3);
   border-radius: 3px;
 }
 
@@ -30,4 +30,25 @@ body {
 
 ::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+.loader {
+  font-size: 24px;
+  animation: fadeIn 1s ease-in-out; /* 添加动画 */
+}.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* 确保在最上层 */
+}
+.app-container {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 100vh; /* 使容器占满整个视口高度 */
 }
