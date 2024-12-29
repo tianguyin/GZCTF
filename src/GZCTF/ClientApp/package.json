@@ -88,12 +88,8 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "~3.4.2",
     "prettier-plugin-sort-json": "^4.0.0",
-<<<<<<< HEAD
     "react-draggable": "^4.4.6",
-    "rollup": "^4.28.1",
-=======
-    "rollup": "^4.29.1",
->>>>>>> bc1e4ccdbd04184b8e72cac28bb5fc556fefc562
+    "rollup": "^4.29.1bc1e4ccdbd04184b8e72cac28bb5fc556fefc562",
     "swagger-typescript-api": "^13.0.23",
     "tslib": "^2.8.1",
     "typescript": "5.7.2",
